@@ -2,10 +2,11 @@ package com.jfb.hexagonal.application.core.usecase;
 
 import com.jfb.hexagonal.application.core.domain.Customer;
 import com.jfb.hexagonal.application.ports.input.FindCustomerByIdInputPort;
+import com.jfb.hexagonal.application.ports.input.UpdateCustomerInputPort;
 import com.jfb.hexagonal.application.ports.output.FindAddressByZipCodeOutputPort;
 import com.jfb.hexagonal.application.ports.output.UpdateCustomerOutputPort;
 
-public class UpdateCustomerUsercase {
+public class UpdateCustomerUsercase implements UpdateCustomerInputPort {
 
   private final FindCustomerByIdInputPort findCustomerByIdInputPort;
   private final FindAddressByZipCodeOutputPort findAddressByZipCodeOutputPort;
@@ -20,6 +21,7 @@ public class UpdateCustomerUsercase {
     this.updateCustomerOutputPort = updateCustomerOutputPort;
   }
 
+  @Override
   public void update(Customer customer, String zipCode) {
     findCustomerByIdInputPort.find(customer.getId());
     var address = findAddressByZipCodeOutputPort.find(zipCode);
