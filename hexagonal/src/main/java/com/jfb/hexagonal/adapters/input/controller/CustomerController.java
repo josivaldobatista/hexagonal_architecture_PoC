@@ -4,6 +4,7 @@ import com.jfb.hexagonal.adapters.input.controller.mapper.CustomerMapper;
 import com.jfb.hexagonal.adapters.input.controller.request.CustomerRequest;
 import com.jfb.hexagonal.adapters.input.controller.response.CustomerResponse;
 import com.jfb.hexagonal.application.core.domain.Customer;
+import com.jfb.hexagonal.application.ports.input.DeleteCustomerByIdInputPort;
 import com.jfb.hexagonal.application.ports.input.FindCustomerByIdInputPort;
 import com.jfb.hexagonal.application.ports.input.InsertCustomerInputPort;
 import com.jfb.hexagonal.application.ports.input.UpdateCustomerInputPort;
@@ -19,9 +20,12 @@ public class CustomerController {
 
   @Autowired
   private InsertCustomerInputPort insertCustomerInputPort;
+  @Autowired
   private FindCustomerByIdInputPort findCustomerByIdInputPort;
   @Autowired
   private UpdateCustomerInputPort updateCustomerInputPort;
+  @Autowired
+  private DeleteCustomerByIdInputPort deleteCustomerByIdInputPort;
   @Autowired
   private CustomerMapper customerMapper;
 
@@ -44,6 +48,12 @@ public class CustomerController {
     Customer customer = customerMapper.toCustomer(customerRequest);
     customer.setId(id);
     updateCustomerInputPort.update(customer, customerRequest.getZipCode());
+    return ResponseEntity.noContent().build();
+  }
+
+  @DeleteMapping("/{id}")
+  public ResponseEntity<Void> delete(@PathVariable("id") String id) {
+    deleteCustomerByIdInputPort.delete(id);
     return ResponseEntity.noContent().build();
   }
 }
