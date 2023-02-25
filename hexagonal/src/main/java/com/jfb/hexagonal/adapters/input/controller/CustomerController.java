@@ -1,6 +1,7 @@
 package com.jfb.hexagonal.adapters.input.controller;
 
 import com.jfb.hexagonal.adapters.input.controller.mapper.CustomerMapper;
+import com.jfb.hexagonal.adapters.input.controller.mapper.CustomerMyMapper;
 import com.jfb.hexagonal.adapters.input.controller.request.CustomerRequest;
 import com.jfb.hexagonal.adapters.input.controller.response.CustomerResponse;
 import com.jfb.hexagonal.application.core.domain.Customer;
@@ -31,7 +32,7 @@ public class CustomerController {
 
   @PostMapping
   public ResponseEntity<Void> insert(@RequestBody @Valid CustomerRequest customerRequest) {
-    var customer = customerMapper.toCustomer(customerRequest);
+    Customer customer = new CustomerMyMapper().toCustomer(customerRequest);
     insertCustomerInputPort.insert(customer, customerRequest.getZipCode());
     return ResponseEntity.ok().build();
   }

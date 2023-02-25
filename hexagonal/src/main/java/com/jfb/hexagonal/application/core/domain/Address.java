@@ -1,5 +1,8 @@
 package com.jfb.hexagonal.application.core.domain;
 
+import lombok.Builder;
+
+@Builder
 public class Address {
 
   private String street;

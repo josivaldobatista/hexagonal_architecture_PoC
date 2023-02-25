@@ -1,6 +1,7 @@
 package com.jfb.hexagonal.adapters.output;
 
 import com.jfb.hexagonal.adapters.output.repository.CustomerRepository;
+import com.jfb.hexagonal.adapters.output.repository.entity.CustomerEntity;
 import com.jfb.hexagonal.adapters.output.repository.mapper.CustomerEntityMapper;
 import com.jfb.hexagonal.application.core.domain.Customer;
 import com.jfb.hexagonal.application.ports.output.InsertCustomerOutputPort;
@@ -17,7 +18,7 @@ public class InsertCustomerAdapter implements InsertCustomerOutputPort {
 
   @Override
   public void insert(Customer customer) {
-    var customerEntity = customerEntityMapper.toCustomerEntity(customer);
+    CustomerEntity customerEntity = customerEntityMapper.toCustomerEntity(customer);
     customerRepository.save(customerEntity);
   }
 }

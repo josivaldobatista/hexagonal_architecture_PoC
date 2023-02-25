@@ -1,23 +1,26 @@
 package com.jfb.hexagonal.application.core.domain;
 
+import lombok.Builder;
+
+@Builder
 public class Customer {
 
   private String id;
   private String name;
-  private Address address;
   private String cpf;
   private Boolean validCpf;
+  private Address address;
 
   public Customer() {
     this.validCpf = false;
   }
 
-  public Customer(String id, String name, Address address, String cpf, Boolean validCpf) {
+  public Customer(String id, String name, String cpf, Boolean validCpf, Address address) {
     this.id = id;
     this.name = name;
-    this.address = address;
     this.cpf = cpf;
     this.validCpf = validCpf;
+    this.address = address;
   }
 
   public String getId() {
@@ -36,14 +39,6 @@ public class Customer {
     this.name = name;
   }
 
-  public Address getAddress() {
-    return address;
-  }
-
-  public void setAddress(Address address) {
-    this.address = address;
-  }
-
   public String getCpf() {
     return cpf;
   }
@@ -58,5 +53,13 @@ public class Customer {
 
   public void setValidCpf(Boolean validCpf) {
     this.validCpf = validCpf;
+  }
+
+  public Address getAddress() {
+    return address;
+  }
+
+  public void setAddress(Address address) {
+    this.address = address;
   }
 }
