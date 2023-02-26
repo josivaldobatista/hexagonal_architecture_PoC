@@ -1,4 +1,34 @@
 # PoC para Arquitetura Hexagonal
+## Arquitetura Hexagonal
+![Arquitetura](https://github.com/josivaldobatista/hexagonal_architecture_PoC/blob/main/img/hexagonal_architecture.png) 
+## Kafka
+![Arquitetura](https://github.com/josivaldobatista/hexagonal_architecture_PoC/blob/main/img/hexagonal_architecture_kafka.png)
 
-## Para rodar o wiremock
-java -jar .\wiremock-jre8-standalone-2.35.0.jar --port 8082
+# Tecnologias utilizadas
+## Back end
+- Java
+- Spring Boot
+- JPA / Hibernate
+- Maven
+- MongoDB
+- Kafka
+
+# Como executar o projeto
+## Back end
+- Pré-requisitos: Java 17
+- Docker
+
+Apos baixar o projeto precisa preciar ir na pasta raiz do projeto e da o comando docker compose up para subir as imagens do docker
+depois, ainda na pasta raiz, deve dar o comando ./gradlew bootRun para executar a aplicação.
+
+Comandos:
+```bash
+docker compose up
+```
+```bash
+./gradlew bootRun
+```
+
+Deixei algumas collections que foram feitas no Insomnia pode baixar clicando aqui https://insomnia.rest/download 
+
+
