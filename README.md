@@ -20,8 +20,7 @@
 - Pré-requisitos: Java 17
 - Docker
 
-Apos baixar o projeto precisa preciar ir na pasta raiz do projeto e da o comando docker compose up para subir as imagens do docker
-depois, ainda na pasta raiz, deve dar o comando ./gradlew bootRun para executar a aplicação.
+Após baixar o projeto com o comando ```git clone https://github.com/josivaldobatista/hexagonal_architecture_PoC.git``` vá até a pasta raiz do projeto e rode o comando no terminal ```docker compose up``` com isso irá subir as imagens do docker. Depois disso, ainda na pasta raiz rode o comando ```./gradlew bootRun``` para executar a aplicação.
 
 Comandos:
 ```bash
@@ -31,6 +30,6 @@ docker compose up
 ./gradlew bootRun
 ```
 
-Deixei algumas collections que foram feitas no Insomnia pode baixar clicando aqui https://insomnia.rest/download 
+Deixei algumas collections na pasta CI que foram feitas no Insomnia pode baixar clicando aqui https://insomnia.rest/download 
 
 
