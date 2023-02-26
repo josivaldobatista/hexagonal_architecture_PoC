@@ -9,9 +9,10 @@
 - Java
 - Spring Boot
 - JPA / Hibernate
-- Maven
+- Gradle
 - MongoDB
 - Kafka
+- Spring Cloud OpenFeign
 
 # Como executar o projeto
 ## Back end
