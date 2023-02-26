@@ -1,4 +1,5 @@
 # PoC para Arquitetura Hexagonal
+[![NPM](https://img.shields.io/npm/l/react)](https://github.com/josivaldobatista/pesquisa-game/blob/main/LICENSE)
 ## Arquitetura Hexagonal
 ![Arquitetura](https://github.com/josivaldobatista/hexagonal_architecture_PoC/blob/main/img/hexagonal_architecture.png) 
 ## Kafka
