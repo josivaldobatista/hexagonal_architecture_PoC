@@ -12,4 +12,12 @@ public class MyAddressResponseMapper {
         .state(addressResponse.getState())
         .build();
   }
+
+  public AddressResponse toAddressResponse(Address address) {
+    return AddressResponse.builder()
+        .street(address.getStreet())
+        .city(address.getCity())
+        .state(address.getState())
+        .build();
+  }
 }

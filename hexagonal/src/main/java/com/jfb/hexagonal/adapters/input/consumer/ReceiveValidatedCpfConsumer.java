@@ -1,6 +1,5 @@
 package com.jfb.hexagonal.adapters.input.consumer;
 
-import com.jfb.hexagonal.adapters.input.consumer.mapper.CustomerMessageMapper;
 import com.jfb.hexagonal.adapters.input.consumer.mapper.MyCustomerMessageMapper;
 import com.jfb.hexagonal.adapters.input.consumer.message.CustomerMessage;
 import com.jfb.hexagonal.application.ports.input.UpdateCustomerInputPort;
@@ -13,8 +12,6 @@ public class ReceiveValidatedCpfConsumer {
 
   @Autowired
   private UpdateCustomerInputPort updateCustomerInputPort;
-  @Autowired
-  private CustomerMessageMapper customerMessageMapper;
 
   @KafkaListener(topics = "tp-cpf-validated", groupId = "jfbatis")
   public void receive(CustomerMessage customerMessage) {
