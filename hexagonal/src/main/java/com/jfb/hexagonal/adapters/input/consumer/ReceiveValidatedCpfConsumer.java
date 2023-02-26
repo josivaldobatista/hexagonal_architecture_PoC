@@ -1,6 +1,7 @@
 package com.jfb.hexagonal.adapters.input.consumer;
 
 import com.jfb.hexagonal.adapters.input.consumer.mapper.CustomerMessageMapper;
+import com.jfb.hexagonal.adapters.input.consumer.mapper.MyCustomerMessageMapper;
 import com.jfb.hexagonal.adapters.input.consumer.message.CustomerMessage;
 import com.jfb.hexagonal.application.ports.input.UpdateCustomerInputPort;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +18,7 @@ public class ReceiveValidatedCpfConsumer {
 
   @KafkaListener(topics = "tp-cpf-validated", groupId = "jfbatis")
   public void receive(CustomerMessage customerMessage) {
-    var customer = customerMessageMapper.toCustomer(customerMessage);
+    var customer = new MyCustomerMessageMapper().toCustomer(customerMessage);
     updateCustomerInputPort.update(customer, customerMessage.getZipCode());
   }
 }

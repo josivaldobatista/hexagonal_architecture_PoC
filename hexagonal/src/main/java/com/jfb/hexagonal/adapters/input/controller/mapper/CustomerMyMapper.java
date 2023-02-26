@@ -9,6 +9,7 @@ public class CustomerMyMapper {
     return Customer.builder()
         .name(customerRequest.getName())
         .cpf(customerRequest.getCpf())
+        .validCpf(false)
         .build();
   }
 }
