@@ -1,5 +1,4 @@
 # PoC para Arquitetura Hexagonal
-[![NPM](https://img.shields.io/npm/l/react)](https://github.com/josivaldobatista/pesquisa-game/blob/main/LICENSE)
 ## Arquitetura Hexagonal
 
 Nesse projeto foi apenas abordado os aspectos relacionados a Arquitetura Hexagonal, outros temas como segurança, validações e outros temas não foram implementado.
