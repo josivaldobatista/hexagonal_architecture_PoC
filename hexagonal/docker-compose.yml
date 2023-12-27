@@ -1,4 +1,4 @@
-version: "3.0"
+version: "3"
 services:
   zookeeper:
     image: confluentinc/cp-zookeeper:5.5.1
@@ -56,12 +56,15 @@ services:
     image: "holomekc/wiremock-gui:latest"
     container_name: wiremock
     ports:
+      # This is just an example of a port mapping
       - "8088:8089"
       - "8084:8088"
+    command:
+      "--port 8089 --https-port 8088 --max-request-journal 1000 --local-response-templating"
     volumes:
-      - ./ci/mocks:/home/wiremock/storage
+      - ./ci/mocks:/home/wiremock/mappings
     environment:
-      WIREMOCK_OPTIONS: "--port=8089,--https-port=8088,--max-request-journal=1000,--local-response-templating,--root-dir=/home/wiremock/storage"
+      WIREMOCK_MY_VAR: "systemValue response templating feature"
 
   kafdrop:
     image: obsidiandynamics/kafdrop:3.27.0
