@@ -22,6 +22,11 @@ Nesse projeto foi apenas abordado os aspectos relacionados a Arquitetura Hexagon
 - Pré-requisitos: Java 17
 - Docker
 
+1 - Após executar o docker compose, execute o comando ```docker ps``` para listar os containers.
+2 - Com o comando ```docker exc -it (Id container) /bin/bash``` vamos entrar dentro do mongo db
+2 - Dentro do mongo db, precisamos informar o usuário e senha para acessar a base de dados, com o comando ```mongosh -u root -pmongosh -u root -p, após isso vai pedir a senha que foi configurada no docker compose.
+
+
 Após baixar o projeto com o comando ```git clone https://github.com/josivaldobatista/hexagonal_architecture_PoC.git``` vá até a pasta raiz do projeto e rode o comando no terminal ```docker compose up``` com isso irá subir as imagens do docker. Depois disso, ainda na pasta raiz rode o comando ```./gradlew bootRun``` para executar a aplicação.
 
 Foi usado o Wiremock para simular a Api de consulta de endereço e para a validação de CPF publicamos uma mensagem para testar o consumer.
