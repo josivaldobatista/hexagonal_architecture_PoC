@@ -1,0 +1,22 @@
+server:
+  port: 8081
+
+jfbw:
+  client:
+    address:
+      url: http://localhost:8088/addresses
+
+jfb:
+  client:
+    address:
+      url: http://localhost:8088/addresses
+
+spring:
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      authentication-database: admin
+      username: root
+      password: example
+      database: hexagonal

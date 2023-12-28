@@ -1,0 +1,18 @@
+server:
+  port: 8081
+
+jfb:
+  client:
+    cep:
+      url: https://viacep.com.br/ws
+#      url: https://viacep.com.br/ws/05797380/json/
+
+spring:
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      authentication-database: admin
+      username: root
+      password: example
+      database: hexagonal
