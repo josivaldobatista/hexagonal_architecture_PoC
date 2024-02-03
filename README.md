@@ -23,7 +23,7 @@ Nesse projeto foi apenas abordado os aspectos relacionados a Arquitetura Hexagon
 - Docker
 
 1 - Após executar o docker compose, execute o comando ```docker ps``` para listar os containers.
-2 - Com o comando ```docker exc -it (Id container) /bin/bash``` vamos entrar dentro do mongo db
+2 - Com o comando ```docker exec -it (mongoContainerId) mongosh``` vamos entrar dentro do mongo db
 2 - Dentro do mongo db, precisamos informar o usuário e senha para acessar a base de dados, com o comando ```mongosh -u root -p```, após isso vai pedir a senha que foi configurada no docker compose.
 4 - ```use hexagonal``` para entrar dentro da base de dados.
 5 - ```show collections``` para mostrar as collctions criadas.
